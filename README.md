@@ -41,29 +41,29 @@ I separates the components as per request:
 5. Navbar, you can track cart item changes and access login logout
 
 ### Flows
-User is able to access home, but when logged on the `add to cart` button will show
- |
- v
-User able to login / register from /auth page
- |
- v
-After login, the token will stored on localStorage
- |
- v
-Successful login will move you to homepage screen
- |
- v
-You able to add to cart -> show notification
- |
- v
-Access cart page -> load history data -> show on history if exist
- |
- v
-Ongoing cart if filled, user can finalize to make the order is sent the database on backend
- |
- v
-Replace data history
+1. User is able to access home, but when logged on the `add to cart` button will show
+1.  |
+1.  v
+1. User able to login / register from /auth page
+1.  |
+1.  v
+1. After login, the token will stored on localStorage
+1.  |
+1.  v
+1. Successful login will move you to homepage screen
+1.  |
+1.  v
+1. You able to add to cart -> show notification
+1.  |
+1.  v
+1. Access cart page -> load history data -> show on history if exist
+1.  |
+1.  v
+1. Ongoing cart if filled, user can finalize to make the order is sent the database on backend
+1.  |
+1.  v
+1. Replace data history
 
 ---
-Disclaimer:
+#### Disclaimer:
 I unable to deploy, since the backend is unable get hosted too...
