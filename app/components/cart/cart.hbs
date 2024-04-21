@@ -1,0 +1,24 @@
+<div class="products">
+  {{#if (eq this.hasItems false)}}
+  <Cart::NoItem />
+  {{/if}}
+  {{#if (eq this.hasItems true)}}
+  <div style="margin-bottom: 12px; font-size: 24px; font-weight: 600; color: white;" class="arbutus">Not Ordered yet!</div>
+  <Cart::ActiveCart
+    @items={{this.items}}
+    @increment={{this.increment}}
+    @decrement={{this.decrement}}
+    @subtotal={{this.getSubTotal}}
+    @total={{this.total}}
+    @removeAll={{this.removeAll}}
+    @reset={{this.reset}}
+    @finalizeOrder={{this.finalizeOrder}}
+  />
+  {{/if}}
+  {{#if (eq this.hasHistory true)}}
+  <div style="margin-bottom: 12px; font-size: 24px; font-weight: 600; color: white;" class="arbutus">Order History</div>
+  <Cart::HistoryCart
+    @items={{this.history}}
+  />
+  {{/if}}
+</div>

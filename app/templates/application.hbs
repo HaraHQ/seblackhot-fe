@@ -1,7 +1,110 @@
-{{page-title "SeblackhotFe"}}
+{{page-title "SEBLACKHOT JELETOT"}}
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<style>
+  body {
+    margin: 0;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: azure;
+  }
+  .navbar>a, .navbar-links>a {
+    text-decoration: none;
+    color: black;
+  }
+  .navbar-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .products-wrapper {
+    width: 100%;
+    min-height: calc(100vh - 51px);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(58, 25, 25);
+  }
+  .products {
+    padding: 32px;
+    width: 500px;
+    background-color: rgb(95, 69, 69);
+  }
+  .add-to-cart {
+    display: flex;
+  }
+  .add-to-cart-button {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  .card > img {
+    border-radius: 4px;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .cart {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+  }
+  .cart:hover {
+    background-color: white;
+    border-radius: 8px;
+  }
+  .cart-count {
+    font-size: 10px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+  }
+  .absolute-wrapper {
+    position: absolute;
+  }
+  .notification-wrapper {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+  .notification {
+    background-color: white;
+    border-radius: 8px;
+    padding: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+</style>
 
-{{outlet}}
+<Navbar />
+<section class="products-wrapper josefin">
+  {{outlet}}
+</section>
+
+<Notif::wrapper />

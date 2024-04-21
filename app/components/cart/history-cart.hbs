@@ -1,0 +1,24 @@
+<div>
+  {{#each @items as |item|}}
+  <div class="cart-card">
+    <div><span style="font-weight: 600;">Order Code:</span> {{item.code}}</div>
+    <div><span style="font-weight: 600;">Created at:</span> {{item.createat}}</div>
+    <div><span style="font-weight: 600;">Status:</span> {{item.status}}</div>
+    <div style="margin-top: 12px; border-bottom: 2px dotted black; padding-bottom: 4px;">
+      <div style="font-weight: 600;">Items:</div>
+      <div>
+        {{#each item.items as |i|}}
+        <div style="display: flex; justify-content: space-between;">
+          <div>{{i.name}}</div>
+          <div>{{i.count}} item - Rp {{i.subtotal}}</div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-weight: 600; padding-top: 4px;">
+      <div>Total:</div>
+      <div>Rp {{item.total}}</div>
+    </div>
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,43 @@
+<div>
+  <div class="cart-card">
+    <div style="margin-top: 12px; border-bottom: 2px dotted black; padding-bottom: 4px;">
+      <div style="font-weight: 600;">Items:</div>
+      <div>
+        {{#each @items as |item|}}
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div>{{item.name}}</div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <div class="counter-change-button" {{on "click" (fn @decrement item.id)}}>➖</div>
+              <div>{{item.count}} item</div>
+              <div class="counter-change-button" {{on "click" (fn @increment item.id)}}>➕</div>
+            </div>
+            <div>Rp {{item.st}}</div>
+
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-weight: 600; padding-top: 4px;">
+      <div>Total:</div>
+      <div>Rp {{@total}}</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+      <div
+        {{on "click" @removeAll}}
+        style="padding: 6px; padding-left: 16px; padding-right: 16px; border-radius: 8px; background-color: red; color: white; cursor: pointer;">
+        Cancel
+      </div>
+      {{!-- <div
+        {{on "click" @reset}}
+        style="padding: 6px; padding-left: 16px; padding-right: 16px; border-radius: 8px; background-color: red; color: white; cursor: pointer;">
+        Dev Reset
+      </div> --}}
+      <div
+        {{on 'click' @finalizeOrder}}
+        style="padding: 6px; padding-left: 16px; padding-right: 16px; border-radius: 8px; background-color: blue; color: white; cursor: pointer;">Finalize Order</div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 24px;" />

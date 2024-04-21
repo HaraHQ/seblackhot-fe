@@ -1,0 +1,23 @@
+<section>
+  <div class="navbar">
+    <LinkTo @route="index">
+      <div class="arbutus">SEBLACKHOT</div>
+    </LinkTo>
+    <div class="navbar-links">
+      <LinkTo @route="cart">
+        <div class="cart">🛒
+          <div class="cart-count">{{this.cartCount}}</div>
+        </div>
+      </LinkTo>
+      {{#if (eq this.token null)}}
+      <LinkTo @route="auth">
+        <div>🔐</div>
+      </LinkTo>
+      {{else}}
+      <div style="cursor: pointer;" {{on "click" (fn this.logout)}}>
+        👋
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</section>

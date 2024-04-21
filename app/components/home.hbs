@@ -1,0 +1,27 @@
+<div class="products">
+  <div class="product">
+
+    {{#each this.menus as |menu|}}
+    <div class="card">
+      <img src="/seblak.jpg" width="100%" height="auto" />
+      <div class="card-footer">
+        <div>
+          <h1>{{menu.name}}</h1>
+          <p>Rp {{menu.price}}</p>
+        </div>
+        {{#if (eq this.isLogin true)}}
+        <div class="add-to-cart">
+          <div
+            {{on "click" (fn this.addToCart menu)}}
+            class="add-to-cart-button">
+            Add to Cart
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    {{/each}}
+
+
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<style>
+  .action-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .action-failed {
+    padding: 8px;
+    border: 1px solid red;
+    color: red;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    width: 60%;
+  }
+</style>
+{{#if (eq this.active 'login')}}
+  <div class="card auth-card">
+    <h1>
+      Login to Seblackhot!
+    </h1>
+    {{#if (eq this.isFailed true)}}
+    <div class="action-wrapper">
+      <div class="action-failed">
+        Gagal Login Message
+      </div>
+    </div>
+    {{/if}}
+    <!-- Login form -->
+    <div style="width: 90%; margin-bottom: 16px;">
+      <div style="margin-bottom: 8px;">
+        <div>Email</div>
+        <input type="text" name="email" class="form-control" {{ on "change" this.setEmail}} />
+      </div>
+      <div>
+        <div>Password</div>
+        <input type="password" name="password" class="form-control" {{ on "change" this.setPassword}} />
+      </div>
+    </div>
+    <!-- Login button -->
+    <div class="auth-button-wrapper">
+      <button class="auth-button" {{on "click" this.login}}>Login</button>
+    </div>
+    <!-- Switch to register link -->
+    <div style="margin-top: 16px;">
+      <div {{on "click" this.setRegister}} style="cursor: pointer;">not registered yet?</div>
+    </div>
+  </div>
+{{else if (eq this.active 'register')}}
+  <div class="card auth-card">
+    <h1>
+      Register customer account...
+    </h1>
+    <!-- Register form -->
+    <div style="width: 90%; margin-bottom: 16px;">
+      <div style="margin-bottom: 8px;">
+        <div>Email</div>
+        <input type="text" name="email" class="form-control" />
+      </div>
+      <div>
+        <div>Password</div>
+        <input type="password" name="password" class="form-control" />
+      </div>
+    </div>
+    <!-- Register button -->
+    <div class="auth-button-wrapper">
+      <button class="auth-button">Register</button>
+    </div>
+    <!-- Switch to login link -->
+    <div style="margin-top: 16px;">
+      <div {{on "click" this.setLogin}} style="cursor: pointer;">have account?</div>
+    </div>
+  </div>
+{{/if}}
